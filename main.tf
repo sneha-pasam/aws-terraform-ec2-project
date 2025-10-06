@@ -1,6 +1,6 @@
 # Define the instance (The Virtual Server)
 resource "aws_instance" "web_server" {
-  ami           = "ami-053b0d53c2792c906" # Example: Ubuntu 22.04 LTS (HVM) in ap-south-1
+  ami           = "ami-07f07a6e1060cd2a8" # Example: Ubuntu 22.04 LTS (HVM) in ap-south-1
   instance_type = var.instance_type
   key_name      = "my-terraform-key" # IMPORTANT: Replace with a key pair you own
   vpc_security_group_ids = [aws_security_group.web_sg.id]
