@@ -3,8 +3,7 @@ resource "aws_instance" "web_server" {
   ami           = "ami-07f07a6e1060cd2a8"
   key_name      = "my-terraform-key" # IMPORTANT: Replace with a key pair you own
   vpc_security_group_ids = [aws_security_group.web_sg.id]
-  subnet_id = "subnet-0f756de8817a02409" # IMPORTANT: Replace with one of your subnet IDs
-
+  
   # Install Apache Web Server on boot
   user_data = <<-EOF
               #!/bin/bash
