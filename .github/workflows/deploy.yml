@@ -1,0 +1,6 @@
+- name: Deploy static site to S3 bucket
+  # The run command needs three things:
+  # 1. The correct secret reference: ${{ secrets.S3_BUCKET_NAME }}
+  # 2. The flag for public read access (essential for a static website): --acl public-read
+  # 3. Cache control to ensure content refreshes for viewers: --cache-control max-age=31536000
+  run: aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --acl public-read --cache-control max-age=31536000
